@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/components/AuthProvider'
 import { supabase } from '@/lib/supabase'
-import { quickTest } from '@/lib/debug-supabase'
 
 // Add custom styles for smooth expansion
 const customStyles = `
@@ -303,10 +302,10 @@ export default function OnboardingPage() {
       
       try {
         // Test Supabase connection first
-        const testResult = await quickTest()
+        const { error: testError } = await supabase.from('profiles').select('count').limit(1)
         
-        if (!testResult.success) {
-          console.warn('Supabase connection failed, skipping onboarding status check:', testResult.error)
+        if (testError) {
+          console.warn('Supabase connection failed, skipping onboarding status check:', testError)
           return
         }
 
@@ -372,11 +371,11 @@ export default function OnboardingPage() {
       }
 
       // Test Supabase connection first
-      const testResult = await quickTest()
+      const { error: testError } = await supabase.from('profiles').select('count').limit(1)
         
-      if (!testResult.success) {
+      if (testError) {
         // Fallback mode - simulate successful submission for demo
-        console.warn('Supabase not available, simulating onboarding completion:', testResult.error)
+        console.warn('Supabase not available, simulating onboarding completion:', testError)
         setSuccess('Welcome to Montty! Redirecting to dashboard...')
         setTimeout(() => {
           router.push('/dashboard')
