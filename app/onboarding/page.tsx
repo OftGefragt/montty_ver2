@@ -203,7 +203,7 @@ function ProcessingState({ onboardingData }: { onboardingData: any }) {
         }, 300 + (index * 100));
       });
     }
-  }, [currentTextIndex, textSequence.length, showFeatures]);
+  }, [currentTextIndex, textSequence.length, showFeatures, features]);
 
   if (showFeatures) {
     return (

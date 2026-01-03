@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useAuth } from '@/components/AuthProvider'
 
@@ -59,7 +59,7 @@ function MonttyLogo({ waveProgress }: { waveProgress: number }) {
   );
 }
 
-export default function AuthPage() {
+function AuthPage() {
   const [isSignUp, setIsSignUp] = useState(true)
   const [formData, setFormData] = useState({
     email: '',
@@ -288,3 +288,16 @@ export default function AuthPage() {
     </div>
   )
 }
+
+// Wrap the AuthPage with Suspense to handle useSearchParams
+function AuthPageWithSuspense() {
+  return (
+    <Suspense fallback={<div className="flex items-center justify-center min-h-screen">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-red-600"></div>
+    </div>}>
+      <AuthPage />
+    </Suspense>
+  )
+}
+
+export default AuthPageWithSuspense
