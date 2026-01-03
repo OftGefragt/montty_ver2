@@ -1,0 +1,99 @@
+/* Date Picker Custom Styles */
+input[type="date"] {
+  text-align: left;
+  padding-left: 3rem !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 12px;
+  opacity: 0.8;
+  transition: all 0.18s ease-out;
+  width: 24px;
+  height: 24px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+/* Enhanced calendar popup animation */
+input[type="date"]:focus::-webkit-calendar-picker-indicator {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* Calendar popover styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+}
+
+/* Global calendar popup styling */
+::-webkit-calendar-picker-indicator {
+  font-size: 16px !important;
+}
+
+/* Dark mode calendar styling */
+@media (prefers-color-scheme: dark) {
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+}
+
+/* Smooth calendar appearance */
+input[type="date"]::-webkit-datetime-edit-text {
+  color: inherit;
+  padding: 0;
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field {
+  color: inherit;
+  padding: 0;
+}
+
+input[type="date"]::-webkit-datetime-edit-day-field {
+  color: inherit;
+  padding: 0;
+}
+
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: inherit;
+  padding: 0;
+}
+
+/* Calendar popup animation */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  animation: calendarAppear 0.2s ease-out;
+}
+
+@keyframes calendarAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+/* Focus state animation */
+input[type="date"]:focus {
+  animation: inputFocus 0.15s ease-out;
+}
+
+@keyframes inputFocus {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.01);
+  }
+}

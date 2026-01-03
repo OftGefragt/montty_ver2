@@ -1,0 +1,281 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import './animations.css';
+
+/* Import Inter font only - GT America fallback */
+
+/* Custom typography and dark mode support */
+.dark {
+  color-scheme: dark;
+}
+
+/* Base typography - Inter font */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+/* Ensure full dark mode background */
+html.dark body {
+  background-color: #0D1117;
+}
+
+html.dark {
+  background-color: #0D1117;
+}
+
+/* Inter for all text elements with -1% spacing */
+h1, h2, h3, h4, h5, h6, p, span, div, td, th, button, input, label, textarea {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Minimalist text styles */
+.text-thin {
+  font-weight: 300;
+}
+
+.text-light {
+  font-weight: 400;
+}
+
+.text-medium {
+  font-weight: 500;
+}
+
+.text-semibold {
+  font-weight: 600;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+/* Improved spacing */
+.text-tight {
+  letter-spacing: -0.025em;
+}
+
+.text-normal {
+  letter-spacing: -0.01em;
+}
+
+.text-wide {
+  letter-spacing: 0.025em;
+}
+
+/* Fix text colors for proper contrast */
+.text-primary {
+  color: #111827;
+}
+
+.dark .text-primary {
+  color: #f3f4f6;
+}
+
+.text-secondary {
+  color: #6b7280;
+}
+
+.dark .text-secondary {
+  color: #e5e7eb;
+}
+
+.text-muted {
+  color: #9ca3af;
+}
+
+.dark .text-muted {
+  color: #d1d5db;
+}
+
+/* Red gradient title style for dark mode */
+.title-gradient {
+  background: linear-gradient(135deg, #ef4444, #dc2626, #b91c1c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+.dark .title-gradient {
+  background: linear-gradient(135deg, #f87171, #ef4444, #dc2626);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Minimalist red icons */
+.icon-red {
+  color: #ef4444;
+}
+
+.dark .icon-red {
+  color: #f87171;
+}
+
+/* Consistent dark mode backgrounds - dark gray with darker boxes */
+.bg-dark-main {
+  background-color: #1a1a1a;
+}
+
+.bg-dark-box {
+  background-color: #0a0a0a;
+}
+
+.bg-dark-hover {
+  background-color: #2a2a2a;
+}
+
+/* Light gray borders for dark mode to make boxes stand out */
+.dark .border-gray-200 {
+  border-color: #374151;
+}
+
+.dark .border-gray-300 {
+  border-color: #4b5563;
+}
+
+.dark .border-gray-700 {
+  border-color: #374151;
+}
+
+/* Dark mode table borders */
+.dark .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #374151;
+}
+
+/* Dark mode hover states */
+.dark .hover\:bg-gray-50:hover {
+  background-color: #1a1a1a;
+}
+
+.dark .hover\:bg-gray-800:hover {
+  background-color: #1a1a1a;
+}
+
+/* 8px spacing system utilities */
+.m-8 { margin: 8px; }
+.m-16 { margin: 16px; }
+.m-24 { margin: 24px; }
+.m-32 { margin: 32px; }
+.m-40 { margin: 40px; }
+.m-48 { margin: 48px; }
+.m-56 { margin: 56px; }
+.m-64 { margin: 64px; }
+
+.mt-8 { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.mt-32 { margin-top: 32px; }
+.mt-40 { margin-top: 40px; }
+.mt-48 { margin-top: 48px; }
+.mt-56 { margin-top: 56px; }
+.mt-64 { margin-top: 64px; }
+
+.mb-8 { margin-bottom: 8px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-32 { margin-bottom: 32px; }
+.mb-40 { margin-bottom: 40px; }
+.mb-48 { margin-bottom: 48px; }
+.mb-56 { margin-bottom: 56px; }
+.mb-64 { margin-bottom: 64px; }
+
+.ml-8 { margin-left: 8px; }
+.ml-16 { margin-left: 16px; }
+.ml-24 { margin-left: 24px; }
+.ml-32 { margin-left: 32px; }
+.ml-40 { margin-left: 40px; }
+.ml-48 { margin-left: 48px; }
+.ml-56 { margin-left: 56px; }
+.ml-64 { margin-left: 64px; }
+
+.mr-8 { margin-right: 8px; }
+.mr-16 { margin-right: 16px; }
+.mr-24 { margin-right: 24px; }
+.mr-32 { margin-right: 32px; }
+.mr-40 { margin-right: 40px; }
+.mr-48 { margin-right: 48px; }
+.mr-56 { margin-right: 56px; }
+.mr-64 { margin-right: 64px; }
+
+.mx-8 { margin-left: 8px; margin-right: 8px; }
+.mx-16 { margin-left: 16px; margin-right: 16px; }
+.mx-24 { margin-left: 24px; margin-right: 24px; }
+.mx-32 { margin-left: 32px; margin-right: 32px; }
+.mx-40 { margin-left: 40px; margin-right: 40px; }
+.mx-48 { margin-left: 48px; margin-right: 48px; }
+.mx-56 { margin-left: 56px; margin-right: 56px; }
+.mx-64 { margin-left: 64px; margin-right: 64px; }
+
+.my-8 { margin-top: 8px; margin-bottom: 8px; }
+.my-16 { margin-top: 16px; margin-bottom: 16px; }
+.my-24 { margin-top: 24px; margin-bottom: 24px; }
+.my-32 { margin-top: 32px; margin-bottom: 32px; }
+.my-40 { margin-top: 40px; margin-bottom: 40px; }
+.my-48 { margin-top: 48px; margin-bottom: 48px; }
+.my-56 { margin-top: 56px; margin-bottom: 56px; }
+.my-64 { margin-top: 64px; margin-bottom: 64px; }
+
+@layer components {
+  .ui-page {
+    @apply w-full max-w-7xl mx-auto;
+  }
+
+  .ui-page-pad {
+    @apply px-8 py-10;
+  }
+
+  .ui-page-header {
+    @apply mb-10 flex items-start justify-between gap-8;
+  }
+
+  .ui-page-title {
+    @apply text-2xl font-semibold leading-tight;
+  }
+
+  .ui-page-subtitle {
+    @apply mt-1 text-sm leading-6;
+  }
+
+  .ui-section {
+    @apply mt-10;
+  }
+
+  .ui-card {
+    @apply rounded-xl p-6;
+  }
+
+  .ui-card-compact {
+    @apply rounded-xl p-4;
+  }
+
+  .ui-table {
+    @apply w-full;
+  }
+
+  .ui-th {
+    @apply px-6 py-3 text-left text-xs font-medium uppercase tracking-wide;
+  }
+
+  .ui-td {
+    @apply px-6 py-4 align-middle;
+  }
+
+  .ui-input {
+    @apply h-10 w-full rounded-lg px-3 text-sm;
+  }
+
+  .ui-btn {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-200;
+  }
+
+  .ui-icon-btn {
+    @apply inline-flex items-center justify-center rounded-md p-2 transition-colors duration-200;
+  }
+}

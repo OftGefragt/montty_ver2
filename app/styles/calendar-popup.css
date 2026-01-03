@@ -1,0 +1,81 @@
+/* Global Calendar Popup Styles */
+::-webkit-calendar-picker {
+  transform: scale(1.5) !important;
+  transform-origin: center !important;
+  transition: transform 0.2s ease-out !important;
+}
+
+/* Calendar popup container */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 12px;
+  opacity: 0.8;
+  transition: all 0.18s ease-out;
+  width: 28px;
+  height: 28px;
+}
+
+/* Enhanced calendar appearance */
+input[type="date"]:focus::-webkit-calendar-picker-indicator {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+/* Calendar popover animation */
+@keyframes calendarGrow {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+/* Apply animation to calendar popup */
+input[type="date"]:in-range::-webkit-calendar-picker-indicator {
+  animation: calendarGrow 0.25s ease-out;
+}
+
+/* Enhanced calendar dialog for modal context */
+input[type="date"]::-webkit-datetime-edit-text {
+  color: inherit;
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field {
+  color: inherit;
+}
+
+input[type="date"]::-webkit-datetime-edit-day-field {
+  color: inherit;
+}
+
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: inherit;
+}
+
+/* Make calendar dropdown larger in modal */
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-radius: 6px;
+}
+
+/* Calendar popup positioning and sizing */
+input[type="date"]:focus {
+  outline: none;
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Dark mode calendar styling */
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.9;
+}
+
+.dark input[type="date"]:focus::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 1;
+}
